@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#script printing Best School 10 times using unile loop
+
+counter=1
+until [ $counter -gt 10 ]
+do
+	echo "Best School"
+	counter=$((counter + 1))
+done
