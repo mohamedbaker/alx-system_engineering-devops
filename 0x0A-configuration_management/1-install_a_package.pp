@@ -1,6 +1,6 @@
 #!/usr/bin/pup
-#install flask -v 2.1 using pupet
-package {'Flask':
+# Install flask (2.1.0)
+package {'flask':
   ensure   => '2.1.0',
   provider => 'pip3'
 }
