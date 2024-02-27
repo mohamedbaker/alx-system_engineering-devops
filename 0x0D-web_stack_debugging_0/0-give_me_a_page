@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# fixing apache and restart the service
+
+echo "ServerName localhost" >> /etc/apache2/apache2.conf
+service apache2 restart
+
