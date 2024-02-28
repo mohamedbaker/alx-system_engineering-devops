@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# transfer a file from our client to a server
+# upload a file from  client to a server using scp
 #Requirements:
 #    Accepts 4 parameters
 #        The path to the file to be transferred
