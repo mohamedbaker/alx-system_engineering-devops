@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Fixes a web server to run Nginx as the nginx user listening on port 8080.
+
+# Ensure nginx user exists
+if ! id -u nginx &>/dev/null; then
+    echo "Creating nginx user..."
+    adduser --system --no-create-home --disabled-login --disabled-password --group nginx
+fi
+
+# Set nginx user and group to nginx
+sed -i 's/^user .*/user nginx nginx;/' /etc/nginx/nginx.conf
+
+# Change nginx port to 8080
+sed -i 's/listen\(.*\)80;/listen\18080;/' /etc/nginx/sites-available/default
+
+sudo chmod 644 /etc/nginx/nginx.conf
+
+# Restart nginx
+service nginx restart
