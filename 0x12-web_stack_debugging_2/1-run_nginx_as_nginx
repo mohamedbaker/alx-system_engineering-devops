@@ -8,10 +8,10 @@ if ! id -u nginx &>/dev/null; then
 fi
 
 # Set nginx user and group to nginx
-sed -i 's/^user .*/user nginx nginx;/' /etc/nginx/nginx.conf
+sudo sed -i 's/^user .*/user nginx nginx;/' /etc/nginx/nginx.conf
 
 # Change nginx port to 8080
-sed -i 's/listen\(.*\)80;/listen\18080;/' /etc/nginx/sites-available/default
+sudo sed -i 's/listen\(.*\)80;/listen\18080;/' /etc/nginx/sites-available/default
 
 sudo chmod 644 /etc/nginx/nginx.conf
 
